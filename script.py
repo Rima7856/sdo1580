@@ -57,7 +57,7 @@ def is_session_valid(session):
         if re.search(r'"sesskey":"([^"]+)"', response.text):
             return True
     except Exception as e:
-        print(f"⚠️ Ошибка при проверке сессии: {e}")
+        print(f"⚠️error checking session: {e}")
     return False
 
 def authenticate(session):
@@ -86,7 +86,7 @@ def authenticate(session):
             return False
 
     except Exception as e:
-        print(f"❌ Ошибка при аутентификации: {e}")
+        print(f"❌ error auth: {e}")
         return False
 
 def get_authenticated_session():
