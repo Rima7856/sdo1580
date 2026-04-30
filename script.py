@@ -51,9 +51,9 @@ def clear_session():
 def is_session_valid(session):
     try:
         response = session.get(QUIZ_URL, timeout=10, allow_redirects=True)
-         if "login/index.php" in response.url or response.status_code == 403:
+        if "login/index.php" in response.url or response.status_code == 403:
             print("⚠️ redirection on login has found!")
-            return False     
+            return False
         if re.search(r'"sesskey":"([^"]+)"', response.text):
             return True
     except Exception as e:
@@ -77,7 +77,7 @@ def authenticate(session):
             'password': PASSWORD
         }, timeout=10)
 
-        time.sleep(1)  
+        time.sleep(1)
         if is_session_valid(session):
             print("✅ good auth")
             return True
@@ -139,7 +139,7 @@ def extract_test_results(html):
         results = []
         for row in rows:
             cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL)
-            if len(cells) >= 3: 
+            if len(cells) >= 3:
                 input_text = clean_cell(cells[0])
                 expected = clean_cell(cells[1])
                 got = clean_cell(cells[2])
