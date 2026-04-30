@@ -11,9 +11,9 @@ cd sdo1580
 ### 3. activate venv
 
 ```bash
-python -m venv venv
-.\venv\Scripts\activate # Windows
-source venv/bin/activate # Linux/ MacOS
+python -m venv .venv
+.\.venv\Scripts\activate # Windows
+source .venv/bin/activate # Linux/ MacOS
 ```
 
 ### 4. install requirements
