@@ -1,4 +1,4 @@
-# SDO Automation
+# SDO Client
 
 ### 1. clone
 ```bash
